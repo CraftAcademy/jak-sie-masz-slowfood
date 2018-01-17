@@ -9,6 +9,7 @@
        <h4><%= product.name %></h4>
        <p><%= product.description %></p>
        <p><%= product.price %></p>
+       <%= image_tag (product.name.parameterize.underscore + '.jpg') %>
     </div>
   <% end %>
 </div>
