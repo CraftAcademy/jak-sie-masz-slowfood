@@ -1,3 +1,4 @@
+@javascript
 Feature: User can see a list of restaurants on the landing page
   As a user
   In order to choose a restaurant
@@ -5,14 +6,16 @@ Feature: User can see a list of restaurants on the landing page
 
   Background:
     Given the following restaurants exist
-    | name              | street_address    | city     |
-    | Thomas Kebabrulle | Drottninggatan 1  | Göteborg |
-    | Oliver's Burger   | Kungsgatan 1      | Göteborg |
-    | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
+      | name              | street_address    | city     |
+      | Thomas Kebabrulle | Drottninggatan 1  | Göteborg |
+      | Oliver's Burger   | Kungsgatan 1      | Göteborg |
+      | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
+
+    And I am at latitude: "57.7", longitude: "11.9"
 
   @googlemap
-  Scenario:
-    When I visit the landing page
-    Then I would like to see "Thomas Kebabrulle"
-    And I would like to see "Oliver's Burger"
-    And I would like to see "Borat's Palace"
+    Scenario:
+      When I visit the landing page
+      Then I would like to see "Thomas Kebabrulle"
+      And I would like to see "Oliver's Burger"
+      And I would like to see "Borat's Palace"
