@@ -1,0 +1,27 @@
+<h2>Order Summary</h2>
+  <ul>
+    <% @order.order_items.each do |item| %>
+   <li><%="#{product.item.name} #{product.item.price.to_i} kr"%></li>
+   <% end %>
+  </ul>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Product</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td><%="#{product.item.name}: "%></td>
+        <td><%=" #{product.item.price} kr"%></td>
+      </tr>
+      <tr>
+        <td scope="row">Total Price:</td>
+        <td> kr</td>
+      </tr>
+    </tbody>
+  </table>
