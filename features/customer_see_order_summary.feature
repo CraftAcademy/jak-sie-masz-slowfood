@@ -24,8 +24,7 @@ Feature: Customer can see a summary of their order and total price
   Scenario: Customer can access order page to see order summary and total price
     Given I visit the landing page
     And I click on "Order" link
-    Then I should be redirected to "order" page
-    And I should see "Order Summary"
+    Then I should see "Order Summary"
     And I should see "Chicken wings 45.0 kr"
     And I should see "Double Burger 50.0 kr"
     And I should see "Total: 95.00 kr"
