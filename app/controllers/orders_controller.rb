@@ -18,6 +18,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show
+    @order = Order.find(session[:order_id])
+  end
+
   private
 
   def get_product
