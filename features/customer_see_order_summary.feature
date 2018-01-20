@@ -10,8 +10,8 @@ Feature: Customer can see a summary of their order and total price
 
     Given the following products exist within a specific restaurant
     | name          | restaurant      | description      | category    | price |
-    | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 50 kr |
-    | Double Burger | Oliver's Burger | Tasty fat burger | Main Course | 50 kr |
+    | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 45    |
+    | Double Burger | Oliver's Burger | Tasty fat burger | Main Course | 50    |
 
     Given I visit the "Oliver's Burger" show page
 
@@ -23,10 +23,9 @@ Feature: Customer can see a summary of their order and total price
   @googlemap @javascript
   Scenario: Customer can access order page to see order summary and total price
     Given I visit the landing page
-    And pause
     And I click on "Order" link
-    Then I should be redirected to "orders" page
+    Then I should be redirected to "order" page
     And I should see "Order Summary"
-    And I should see "Chicken wings" with a price of "45.00 kr"
-    And I should see "Double Burger" with a price of "50.00 kr"
+    And I should see "Chicken wings 45.0 kr"
+    And I should see "Double Burger 50.0 kr"
     And I should see "Total: 95.00 kr"
