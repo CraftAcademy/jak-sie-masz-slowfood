@@ -4,14 +4,26 @@ Feature: Customer can see a summary of their order and total price
   I would like be able to see a summary on an order details page
 
   Background:
-    Given the following order items exist in the order:
-    | name          |   price  |
-    | Chicken wings |   45     |
-    | Doucle Burger |   50     |
+    Given the following restaurants exist
+    | name              | street_address    | city     |
+    | Oliver's Burger   | Kungsgatan 1      | Göteborg |
 
-  @googlemap
+    Given the following products exist within a specific restaurant
+    | name          | restaurant      | description      | category    | price |
+    | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 50 kr |
+    | Double Burger | Oliver's Burger | Tasty fat burger | Main Course | 50 kr |
+
+    Given I visit the "Oliver's Burger" show page
+
+    Given the following order items exist in the order:
+    | name          |
+    | Chicken wings |
+    | Double Burger |
+
+  @googlemap @javascript
   Scenario: Customer can access order page to see order summary and total price
     Given I visit the landing page
+    And pause
     And I click on "Order" link
     Then I should be redirected to "orders" page
     And I should see "Order Summary"

@@ -1,14 +1,10 @@
-Given("the following order items exist in the order") do |table|
-
-  @order.id = Order.find_by(session[:order_id])
+Given("the following order items exist in the order:") do |table|
+  @order = Order.create
   table.hashes.each do | product |
-    product = Product.find_by(name: product_name)
-    order.add(product, product.price)
+    steps %Q{
+      And "#{product[:name]}" is already in my order
+    }
   end
-end
-
-Given("I click on {string} link") do |link|
-  click_link link
 end
 
 Then("I should see {string} with a price of {string}") do |product_name, product_price|
