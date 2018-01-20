@@ -1,4 +1,3 @@
-
 Feature: Showing restaurants on map
   As a user,
   In order to pick a restaurant,
