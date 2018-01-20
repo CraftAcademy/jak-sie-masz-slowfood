@@ -7,8 +7,6 @@ Given("the following order items exist in the order:") do |table|
   end
 end
 
-
-
 Then("I should be redirected to {string} page") do |page_name|
   expect(page.current_path).to eq page_path_from(page_name)
 end
