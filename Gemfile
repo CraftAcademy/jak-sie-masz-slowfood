@@ -27,6 +27,7 @@ gem 'devise'
 gem 'active_model_serializers', '~> 0.10.2'
 gem 'devise_token_auth'
 gem 'rack-cors', require: 'rack/cors'
+gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 
 
 group :development, :test do
